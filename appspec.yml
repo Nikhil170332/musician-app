@@ -1,8 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: /app
-    destination: /var/www/app/
+  - source: / # This represents the root of the source bundle
+    destination: /var/www/html/ # This is where files will be placed on the EC2 instance
+
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
@@ -13,11 +14,11 @@ hooks:
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_application.sh
+    - location: scripts/start_apache.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_application.sh
+    - location: scripts/stop_apache.sh
       timeout: 300
       runas: root
   ValidateService:
