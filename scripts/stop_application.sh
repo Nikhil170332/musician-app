@@ -1,6 +1,3 @@
 #!/bin/bash
-echo "Stopping application"
-
-# Example: Stop a service
-sudo systemctl stop myapp.service
-
+echo "Stopping Apache server"
+sudo systemctl stop apache2
