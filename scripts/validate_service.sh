@@ -1,12 +1,9 @@
 #!/bin/bash
-echo "Validating service"
-
-# Example: Check service status
-if systemctl is-active --quiet myapp.service; then
-    echo "Service is running"
+echo "Validating Apache service"
+if systemctl is-active --quiet apache2; then
+    echo "Apache is running"
     exit 0
 else
-    echo "Service is not running"
+    echo "Apache is not running"
     exit 1
 fi
-
