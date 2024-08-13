@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# Echo a message for logging
-echo "Stopping Apache server"
-
-# Stop the Apache service
-sudo systemctl stop apache2
+check = $(ps -ef | grep node | head -n 1 | awk '{print $2}')
 
 # Check if the Apache service stopped successfully
-if ! systemctl is-active --quiet apache2; then
-    echo "Apache has stopped successfully"
+if [[$check >= 0]]; then
+    sudo kill -15 $check
     exit 0
 else
-    echo "Apache failed to stop"
+    echo "It is stopped"
     exit 1
 fi
 
