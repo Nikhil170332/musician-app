@@ -1,12 +1,13 @@
 #!/bin/bash
 
-check = $(ps -ef | grep '\snode\s' | head -n 1 | awk '{print $2}')
+check = $(ps -aux | grep app.js)
 
 # Check if the Apache service stopped successfully
 if [[$check -eq 0]]; then
-    sudo kill -9 $check
+    pkill -f app.js
     exit 0
 else
     echo "It is not running"
+    exit 1
 fi
 
