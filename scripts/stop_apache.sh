@@ -8,4 +8,5 @@ if [[$check >= 0]]; then
     exit 0
 else
     echo "It is not running"
+    exit 1
 fi
