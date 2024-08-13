@@ -5,6 +5,10 @@ files:
     destination: /var/www/html/ # This is where files will be placed on the EC2 instance
 
 hooks:
+  ApplicationStop:
+    - location: scripts/stop_apache.sh
+      timeout: 300
+      runas: root
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 300
@@ -15,10 +19,6 @@ hooks:
       runas: root
   ApplicationStart:
     - location: scripts/start_apache.sh
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_apache.sh
       timeout: 300
       runas: root
   ValidateService:
