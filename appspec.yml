@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: / # This represents the root of the source bundle
-    destination: /var/www/html/ # This is where files will be placed on the EC2 instance
+  - source: /app.js # This represents the root of the source bundle
+    destination: /opt/ # This is where files will be placed on the EC2 instance
 
 hooks:
   ApplicationStop:
