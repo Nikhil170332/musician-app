@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /app.js # This represents the root of the source bundle
+  - source: / # This represents the root of the source bundle
     destination: /opt/ # This is where files will be placed on the EC2 instance
 
 hooks:
