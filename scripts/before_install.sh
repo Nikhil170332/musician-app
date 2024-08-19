@@ -5,4 +5,4 @@ cd /home/ubuntu
 sudo apt install nodejs -y
 sudo apt install npm -y
 sudo npm install -g npm-install-missing -y
-rm -rf node_modules package-lock.json && npm install && npm start
+sudo npm install && npm start
