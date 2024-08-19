@@ -1,7 +1,7 @@
 #!/bin/bash
 
-check=$(ps -aux | grep '\snode\s' | head -n 1 | awk '{print $2}')
-if [ "$check" == '0' ];
+check=$(ps -aux | grep 'node' | head -n 1 | awk '{print $2}')
+if [[ $check != '0' ]];
 then
     sudo kill -9 $check
     exit 0
