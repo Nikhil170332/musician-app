@@ -1,3 +1,2 @@
 #!/bin/bash
-
-sudo node /opt/app.js
+node /opt/app.js
