@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Setting permissions"
-sudo chmod -x /opt/*.js
+sudo chmod -776 /opt/*.js
